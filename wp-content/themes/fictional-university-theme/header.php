@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html <?php language_attributes(); ?>>
   <head>
       <meta name="viewport" content="width=device-width, inital-scale=1">
       <?php wp_head(); ?>
