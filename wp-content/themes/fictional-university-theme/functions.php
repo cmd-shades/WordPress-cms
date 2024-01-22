@@ -9,3 +9,10 @@ function university_files() {
 }
 
 add_action('wp_enqueue_scripts', 'university_files');
+
+function university_features(){
+    // Give WordPress title tag control
+    add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme', 'university_features');
