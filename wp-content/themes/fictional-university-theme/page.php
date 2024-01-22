@@ -26,6 +26,11 @@
         </div>
         <?php endif; ?>
 
+        <?php $hasParent = get_pages([
+                'child_of'  =>  get_the_ID()
+        ]); ?>
+
+        <?php if($parentPostId || $hasParent): ?>
         <div class="page-links">
             <h2 class="page-links__title">
                 <a href="<?=get_permalink($parentPostId); ?>">
@@ -39,6 +44,7 @@
                 ]); ?>
             </ul>
         </div>
+        <?php endif; ?>
 
         <div class="generic-content">
             <?php the_content() ?>
