@@ -1,8 +1,10 @@
 <?php
 
-function university_post_types () {
+function university_post_types()
+{
     // @see https://developer.wordpress.org/reference/functions/register_post_type/
-    register_post_type('event',[
+    register_post_type('event', [
+        'has_archive'   => true,
         'public'         =>  true,
         'labels'         =>  [
             'name'           =>  'Events',
@@ -15,7 +17,7 @@ function university_post_types () {
             'all_items'      =>  'All Events',
             'search_items'      =>  'Search Events',
         ],
-        'has_archive'   => true,
+
         'menu_icon'     =>  'dashicons-calendar-alt', // @see https://developer.wordpress.org/resource/dashicons/
         'show_in_rest'  =>  true, // show Gutenberg editor
     ]);

@@ -3,7 +3,7 @@
         <div class="group">
             <div class="site-footer__col-one">
                 <h1 class="school-logo-text school-logo-text--alt-color">
-                    <a href="<?=site_url()?>"><strong>Fictional</strong> University</a>
+                    <a href="<?php echo site_url()?>"><strong>Fictional</strong> University</a>
                 </h1>
                 <p><a class="site-footer__link" href="#">555.555.5555</a></p>
             </div>
@@ -12,18 +12,22 @@
                 <div class="site-footer__col-two">
                     <h3 class="headline headline--small">Explore</h3>
                     <nav class="nav-list">
-                        <?php wp_nav_menu([
+                        <?php wp_nav_menu(
+                            [
                             'theme_location'  =>  'footerNavOne'
-                        ]); ?>
+                            ]
+                        ); ?>
                     </nav>
                 </div>
 
                 <div class="site-footer__col-three">
                     <h3 class="headline headline--small">Learn</h3>
                     <nav class="nav-list">
-                        <?php wp_nav_menu([
+                        <?php wp_nav_menu(
+                            [
                             'theme_location'  =>  'footerNavTwo'
-                        ]); ?>
+                            ]
+                        ); ?>
                     </nav>
                 </div>
             </div>
