@@ -27,10 +27,16 @@
         <?php endif; ?>
 
         <div class="page-links">
-            <h2 class="page-links__title"><a href="<?php site_url('about-us')?>">About Us</a></h2>
+            <h2 class="page-links__title">
+                <a href="<?=get_permalink($parentPostId); ?>">
+                    <?=get_the_title($parentPostId); ?>
+                </a>
+            </h2>
             <ul class="min-list">
-                <li class="current_page_item"><a href="<?php site_url('our-history')?>">Our History</a></li>
-                <li><a href="#">Our Goals</a></li>
+                <?php wp_list_pages([
+                        'title_li'  => null,
+                        'child_of'  => ($parentPostId) ? $parentPostId : get_the_ID(),
+                ]); ?>
             </ul>
         </div>
 
