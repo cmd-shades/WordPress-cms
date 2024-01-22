@@ -1,13 +1,11 @@
 class GMap {
-    constructor()
-    {
+    constructor() {
         document.querySelectorAll(".acf-map").forEach(el => {
             this.new_map(el)
         })
     }
 
-    new_map($el)
-    {
+    new_map($el) {
         var $markers = $el.querySelectorAll(".marker")
 
         var args = {
@@ -20,17 +18,16 @@ class GMap {
         map.markers = []
         var that = this
 
-      // add markers
+        // add markers
         $markers.forEach(function (x) {
             that.add_marker(x, map)
         })
 
-      // center map
+        // center map
         this.center_map(map)
     } // end new_map
 
-    add_marker($marker, map)
-    {
+    add_marker($marker, map) {
         var latlng = new google.maps.LatLng($marker.getAttribute("data-lat"), $marker.getAttribute("data-lng"))
 
         var marker = new google.maps.Marker({
@@ -40,7 +37,7 @@ class GMap {
 
         map.markers.push(marker)
 
-      // if marker contains HTML, add it to an infoWindow
+        // if marker contains HTML, add it to an infoWindow
         if ($marker.innerHTML) {
             // create info window
             var infowindow = new google.maps.InfoWindow({
@@ -54,24 +51,23 @@ class GMap {
         }
     } // end add_marker
 
-    center_map(map)
-    {
+    center_map(map) {
         var bounds = new google.maps.LatLngBounds()
 
-      // loop through all markers and create bounds
+        // loop through all markers and create bounds
         map.markers.forEach(function (marker) {
             var latlng = new google.maps.LatLng(marker.position.lat(), marker.position.lng())
 
             bounds.extend(latlng)
         })
 
-      // only 1 marker?
+        // only 1 marker?
         if (map.markers.length == 1) {
             // set center of map
             map.setCenter(bounds.getCenter())
             map.setZoom(16)
         } else {
-          // fit to bounds
+            // fit to bounds
             map.fitBounds(bounds)
         }
     } // end center_map

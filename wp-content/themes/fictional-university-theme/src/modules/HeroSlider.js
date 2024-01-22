@@ -1,8 +1,7 @@
 import Glide from "@glidejs/glide"
 
 class HeroSlider {
-    constructor()
-    {
+    constructor() {
         if (document.querySelector(".hero-slider")) {
             // count how many slides there are
             const dotCount = document.querySelectorAll(".hero-slider__slide").length
