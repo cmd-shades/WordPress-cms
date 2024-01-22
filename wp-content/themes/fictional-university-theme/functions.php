@@ -13,6 +13,8 @@ add_action('wp_enqueue_scripts', 'university_files');
 function university_features(){
     // Give WordPress title tag control
     add_theme_support('title-tag');
+    // Set up navigation
+    register_nav_menu('headerNavigation', 'Header Navigation Location');
 }
 
 add_action('after_setup_theme', 'university_features');

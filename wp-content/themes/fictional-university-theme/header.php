@@ -15,13 +15,9 @@
           <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
           <div class="site-header__menu group">
               <nav class="main-navigation">
-                  <ul>
-                      <li><a href="<?=site_url('/about-us')?>">About Us</a></li>
-                      <li><a href="<?=site_url('/programs')?>">Programs</a></li>
-                      <li><a href="<?=site_url('/events')?>">Events</a></li>
-                      <li><a href="<?=site_url('/campuses')?>">Campuses</a></li>
-                      <li><a href="<?=site_url('/blog')?>">Blog</a></li>
-                  </ul>
+                  <?php wp_nav_menu([
+                          'theme_location'  =>  'headerNavigation'
+                  ]); ?>
               </nav>
               <div class="site-header__util">
                   <a href="#" class="btn btn--small btn--orange float-left push-right">Login</a>
