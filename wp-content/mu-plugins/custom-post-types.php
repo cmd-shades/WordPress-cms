@@ -16,7 +16,8 @@ function university_post_types () {
             'search_items'      =>  'Search Events',
         ],
         'has_archive'   => true,
-        'menu_icon'     =>  'dashicons-calendar-alt' // @see https://developer.wordpress.org/resource/dashicons/
+        'menu_icon'     =>  'dashicons-calendar-alt', // @see https://developer.wordpress.org/resource/dashicons/
+        'show_in_rest'  =>  true, // show Gutenberg editor
     ]);
 }
 
