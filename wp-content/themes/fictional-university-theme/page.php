@@ -1,11 +1,7 @@
-<?php
+<?php get_header(); ?>
 
-get_header(); ?>
-
-<?php
-while (have_posts()) : ?>
-    <?php
-    the_post(); ?>
+<?php while (have_posts()) : ?>
+    <?php the_post(); ?>
     <div class="page-banner">
         <div class="page-banner__bg-image" style="background-image: url(<?php
         echo get_theme_file_uri('images/ocean.jpg'); ?>)"></div>
@@ -19,45 +15,34 @@ while (have_posts()) : ?>
     </div>
 
     <div class="container container--narrow page-section">
-        <?php
-        $parentPostId = wp_get_post_parent_id(get_the_ID()); ?>
-        <?php
-        if ($parentPostId) : ?>
+        <?php $parentPostId = wp_get_post_parent_id(get_the_ID()); ?>
+        <?php if ($parentPostId) : ?>
             <div class="metabox metabox--position-up metabox--with-home-link">
                 <p>
-                    <a class="metabox__blog-home-link" href="<?php
-                    echo get_permalink($parentPostId) ?>">
+                    <a class="metabox__blog-home-link" href="<?php echo get_permalink($parentPostId) ?>">
                         <i class="fa fa-home" aria-hidden="true"></i>
-                        Back to <?php
-                        echo get_the_title($parentPostId); ?>
+                        Back to <?php echo get_the_title($parentPostId); ?>
                     </a>
-                    <span class="metabox__main"><?php
-                        the_title(); ?></span>
+                    <span class="metabox__main"><?php the_title(); ?></span>
                 </p>
             </div>
-            <?php
-        endif; ?>
+        <?php endif; ?>
 
-        <?php
-        $hasParent = get_pages(
+        <?php $hasParent = get_pages(
             [
                 'child_of' => get_the_ID()
             ]
         ); ?>
 
-        <?php
-        if ($parentPostId || $hasParent) : ?>
+        <?php if ($parentPostId || $hasParent) : ?>
             <div class="page-links">
                 <h2 class="page-links__title">
-                    <a href="<?php
-                    echo get_permalink($parentPostId); ?>">
-                        <?php
-                        echo get_the_title($parentPostId); ?>
+                    <a href="<?php echo get_permalink($parentPostId); ?>">
+                        <?php echo get_the_title($parentPostId); ?>
                     </a>
                 </h2>
                 <ul class="min-list">
-                    <?php
-                    wp_list_pages(
+                    <?php wp_list_pages(
                         [
                             'title_li' => null,
                             'child_of' => ($parentPostId) ? $parentPostId : get_the_ID(),
@@ -65,12 +50,10 @@ while (have_posts()) : ?>
                     ); ?>
                 </ul>
             </div>
-            <?php
-        endif; ?>
+        <?php endif; ?>
 
         <div class="generic-content">
-            <?php
-            the_content() ?>
+            <?php the_content() ?>
         </div>
     </div>
     <?php
