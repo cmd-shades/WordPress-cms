@@ -61,7 +61,7 @@
             <?php endwhile; ?>
 
 
-            <p class="t-center no-margin"><a href="#" class="btn btn--blue">View All Events</a></p>
+            <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event') ?>" class="btn btn--blue">View All Events</a></p>
         </div>
     </div>
     <div class="full-width-split__two">
@@ -106,7 +106,7 @@
     <div data-glide-el="track" class="glide__track">
         <div class="glide__slides">
             <div class="hero-slider__slide"
-                 style="background-image: url(<?php echo get_theme_file_uri('images/bus.jpg') ?>">
+                 style="background-image: url(<?php echo get_theme_file_uri('/images/bus.jpg'); ?>);">
                 <div class="hero-slider__interior container">
                     <div class="hero-slider__overlay">
                         <h2 class="headline headline--medium t-center">Free Transportation</h2>
@@ -116,7 +116,7 @@
                 </div>
             </div>
             <div class="hero-slider__slide"
-                 style="background-image: url(<?php echo get_theme_file_uri('images/apples.jpg') ?>">
+                 style="background-image: url(<?php echo get_theme_file_uri('/images/apples.jpg'); ?>);">
                 <div class="hero-slider__interior container">
                     <div class="hero-slider__overlay">
                         <h2 class="headline headline--medium t-center">An Apple a Day</h2>
@@ -126,7 +126,7 @@
                 </div>
             </div>
             <div class="hero-slider__slide"
-                 style="background-image: url(<?php echo get_theme_file_uri('images/bread.jpg') ?>">
+                 style="background-image: url(<?php echo get_theme_file_uri('/images/bread.jpg'); ?>);">
                 <div class="hero-slider__interior container">
                     <div class="hero-slider__overlay">
                         <h2 class="headline headline--medium t-center">Free Food</h2>
@@ -136,7 +136,8 @@
                 </div>
             </div>
         </div>
-        <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]"></div>
+        <div class="slider__bullets glide__bullets" data-glide-el="controls[nav]">
+        </div>
     </div>
 </div>
 
