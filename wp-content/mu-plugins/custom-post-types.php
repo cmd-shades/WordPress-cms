@@ -5,7 +5,7 @@ function university_post_types()
     // @see https://developer.wordpress.org/reference/functions/register_post_type/
     register_post_type('event', [
 		'show_in_rest' => true, // show Gutenberg editor
-		'supports'     => ['title', 'editor', 'excerpt',],
+		'supports'     => ['title', 'editor', 'excerpt'],
 		'has_archive'  => true,
 		'public'       => true,
 		'labels'       => [
