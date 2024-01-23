@@ -49,7 +49,7 @@ get_header(); ?>
                             </p>
                         </div>
                     </div>
-                <?php
+                    <?php
                 endwhile; ?>
 
                 <?php
@@ -95,7 +95,7 @@ get_header(); ?>
                             </p>
                         </div>
                     </div>
-                <?php
+                    <?php
                 endwhile; ?>
                 <?php
                 wp_reset_postdata(); ?>

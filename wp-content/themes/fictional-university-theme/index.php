@@ -44,7 +44,7 @@ get_header(); ?>
                     </p>
                 </div>
             </div>
-        <?php
+            <?php
         endwhile; ?>
 
         <?php

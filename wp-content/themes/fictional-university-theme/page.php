@@ -35,7 +35,7 @@ while (have_posts()) : ?>
                         the_title(); ?></span>
                 </p>
             </div>
-        <?php
+            <?php
         endif; ?>
 
         <?php
@@ -65,7 +65,7 @@ while (have_posts()) : ?>
                     ); ?>
                 </ul>
             </div>
-        <?php
+            <?php
         endif; ?>
 
         <div class="generic-content">
@@ -73,7 +73,7 @@ while (have_posts()) : ?>
             the_content() ?>
         </div>
     </div>
-<?php
+    <?php
 endwhile; ?>
 <?php
 get_footer();

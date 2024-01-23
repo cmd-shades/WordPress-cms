@@ -36,7 +36,7 @@ while (have_posts()) : ?>
             the_content() ?>
         </div>
     </div>
-<?php
+    <?php
 endwhile; ?>
 
 <?php
